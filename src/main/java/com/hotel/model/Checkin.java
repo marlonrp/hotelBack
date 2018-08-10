@@ -31,4 +31,6 @@ public class Checkin implements Serializable {
 	
 	@Column(name="possui_veiculo")
 	private boolean possuiVeiculo;
+	
+	private boolean finalizado;
 }

@@ -24,25 +24,29 @@ public class PessoaResource {
 	@Autowired
 	private PessoaService pService;
 	
+	@CrossOrigin("http://localhost:4200")
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<?> findAll(){
 		
 		List<Pessoa> conteudo = pService.findAll();		
 		return ResponseEntity.ok().body(conteudo);
 	}
-	
+
+	@CrossOrigin("http://localhost:4200")
 	@GetMapping(value="/{id}")
 	public ResponseEntity<?> findOneById(@PathVariable Integer id){
 		Optional<Pessoa> t = pService.findById(id);
 		return ResponseEntity.ok().body(t);
 	}
-	
+
+	@CrossOrigin("http://localhost:4200")
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<?> save(@RequestBody Pessoa pessoa){
 		pService.save(pessoa);
 		return ResponseEntity.ok().body("Cliente salvo");
 	}
-	
+
+	@CrossOrigin("http://localhost:4200")
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
 	public ResponseEntity<?> save(@PathVariable Integer id, @RequestBody Pessoa pessoa){
 		

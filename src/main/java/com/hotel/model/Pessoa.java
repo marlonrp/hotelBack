@@ -28,4 +28,6 @@ public class Pessoa implements Serializable {
 	
 	@Column(name="valor_gasto")
 	private double valorGasto;
+	
+	private boolean hospedado;
 }
